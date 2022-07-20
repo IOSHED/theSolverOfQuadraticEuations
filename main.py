@@ -16,7 +16,7 @@ class Program:
 
     @staticmethod
     def calculationDiscriminant(a: float, b: float, c: float) -> float:
-        return (b * b) - 4 * a * c
+        return b ** 2 - 4 * a * c
 
     @classmethod
     def parsingValues(cls):
@@ -40,8 +40,8 @@ class Program:
     def calculation(cls):
         discriminant = Program.calculationDiscriminant(cls.a, cls.b, cls.c)
         if discriminant > 0:
-            cls.x1 = -cls.b - discriminant / 2 * cls.a
-            cls.x2 = -cls.b + discriminant / 2 * cls.a
+            cls.x1 = (-cls.b - (discriminant ** 0.5)) / (2 * cls.a)
+            cls.x2 = (-cls.b + (discriminant ** 0.5)) / (2 * cls.a)
         elif discriminant == 0:
             cls.x1 = -cls.b / 2 * cls.a
         else:
